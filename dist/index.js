@@ -30891,6 +30891,15 @@ var github = __nccwpck_require__(5942);
  */
 async function run() {
   try {
+    console.log(
+      `the number of this PR is #${
+        github.context.payload.issue.number || github.context.payload.pull_request.number
+      }`
+    );
+    console.log({
+      issueNumber: github.context.payload.issue.number,
+      prNumber: github.context.payload.pull_request.number,
+    });
     console.log(github.context.payload);
   } catch (error) {
     // Fail the workflow run if an error occurs
