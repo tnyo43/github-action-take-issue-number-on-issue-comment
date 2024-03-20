@@ -1,0 +1,5 @@
+name: "github-action-take-issue-number-on-issue-comment"
+
+runs:
+  using: node20
+  main: dist/index.js
