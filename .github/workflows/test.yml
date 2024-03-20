@@ -15,11 +15,11 @@ jobs:
   test-action:
     name: GitHub Actions Test
     runs-on: ubuntu-latest
+    if: github.event_name != 'issue_comment' || github.event.issue.pull_request
     steps:
       - name: Checkout
         id: checkout
         uses: actions/checkout@v4
-
       - name: Test Local Action
         id: test-action
         uses: ./
